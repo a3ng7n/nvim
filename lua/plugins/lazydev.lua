@@ -6,19 +6,19 @@ return {
     },
     keys = {
       {
-        "<leader>dPt",
+        "<leader>dPT",
         function()
           require("dap-python").test_method({ config = { justMyCode = false } })
         end,
-        desc = "Debug Method",
+        desc = "Debug Method (justMyCode = false)",
         ft = "python",
       },
       {
-        "<leader>dPc",
+        "<leader>dPC",
         function()
           require("dap-python").test_class({ config = { justMyCode = false } })
         end,
-        desc = "Debug Class",
+        desc = "Debug Class (justMyCode = false)",
         ft = "python",
       },
     },
@@ -26,6 +26,7 @@ return {
       require("dap-python").setup(require("venv-selector").python())
     end,
   },
+  -- tell ruff to sort imports on save
   {
     "stevearc/conform.nvim",
     opts = {
