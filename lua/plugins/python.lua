@@ -1,4 +1,5 @@
 return {
+  -- add justMyCode keymaps and set venv for python dap
   {
     "mfussenegger/nvim-dap-python",
     dependencies = {
@@ -8,6 +9,7 @@ return {
       {
         "<leader>dPT",
         function()
+          ---@diagnostic disable-next-line: missing-fields
           require("dap-python").test_method({ config = { justMyCode = false } })
         end,
         desc = "Debug Method (justMyCode = false)",
@@ -16,6 +18,7 @@ return {
       {
         "<leader>dPC",
         function()
+          ---@diagnostic disable-next-line: missing-fields
           require("dap-python").test_class({ config = { justMyCode = false } })
         end,
         desc = "Debug Class (justMyCode = false)",
@@ -34,13 +37,5 @@ return {
         ["python"] = { "ruff_format", "ruff_fix" },
       },
     },
-  },
-  -- multiple cursors
-  { "mg979/vim-visual-multi" },
-  -- tailwind class name hints
-  {
-    "luckasRanarison/tailwind-tools.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    -- opts = {}, -- your configuration
   },
 }
