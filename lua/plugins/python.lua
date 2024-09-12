@@ -39,4 +39,36 @@ return {
       },
     },
   },
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "nvim-neotest/neotest-python",
+    },
+    opts = {
+      adapters = {
+        ["neotest-python"] = {
+          --     -- ["runner"] = "pytest",
+          ["python"] = require("dap-python").setup(require("venv-selector").python()),
+          --     is_test_file = function(file_path)
+          --       if not vim.endswith(file_path, ".py") then
+          --         return false
+          --       end
+          --       local elems = vim.split(file_path, Path.path.sep)
+          --       local file_name = elems[#elems]
+          --       local result = not (string.find(file_path, "circuit_executor") or string.find(file_path, "sim_executor"))
+          --       result = result and (vim.startswith(file_name, "test_") or vim.endswith(file_name, "_test.py"))
+          --       return result
+          --     end,
+          --     -- ["pytest_discover_instances"] = true,
+        },
+      },
+      ["discovery"] = {
+        ["filter_dir"] = function(file_name, rel_path, root_path)
+          local result = not (string.find(rel_path, "circuit_executor") or string.find(rel_path, "sim_executor"))
+          return result
+        end,
+      },
+    },
+  },
 }
