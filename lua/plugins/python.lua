@@ -1,4 +1,5 @@
 return {
+  { "linux-cultist/venv-selector.nvim", enabled = true },
   -- add justMyCode keymaps and set venv for python dap
   {
     "a3ng7n/nvim-dap-python",
