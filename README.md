@@ -1,6 +1,7 @@
 # what
 
 bootstrap
+
 ```
 # shell
 sudo apt install zsh
@@ -27,6 +28,9 @@ sudo apt install make gcc ripgrep unzip git xclip fd-find luarocks
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim
+
+# fzf
+sudo apt install fzf
 
 # lazygit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
