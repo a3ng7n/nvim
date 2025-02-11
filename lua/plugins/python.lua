@@ -80,7 +80,7 @@ return {
 
       vim.api.nvim_set_keymap(
         "n",
-        "<leader>dc",
+        "<leader>dE",
         "",
         { desc = "[D]ebug [C]ondition breakpoints", callback = set_exception_breakpoints }
       )
