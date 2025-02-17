@@ -11,6 +11,7 @@ return {
     },
     opts = {}, -- your configuration
   },
+  -- chrome debugger setup
   {
     "mfussenegger/nvim-dap",
     dependencies = {
@@ -62,5 +63,12 @@ return {
         })
       end
     end,
+  },
+  -- vtsls customization
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = { vtsls = { settings = { typescript = { preferences = { importModuleSpecifier = "shortest" } } } } },
+    },
   },
 }
