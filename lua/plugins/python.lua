@@ -2,8 +2,7 @@ return {
   { "linux-cultist/venv-selector.nvim", enabled = true },
   -- add justMyCode keymaps and set venv for python dap
   {
-    "a3ng7n/nvim-dap-python",
-    branch = "fix-add-root-dirs-default-runner",
+    "mfussenegger/nvim-dap-python",
     dependencies = {
       "linux-cultist/venv-selector.nvim",
     },
