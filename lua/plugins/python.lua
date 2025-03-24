@@ -67,6 +67,16 @@ return {
           ["runner"] = "pytest",
         },
       },
+      -- Ignore common build artifact directories when looking for tests
+      discovery = {
+        enabled = true,
+        filter_dir = function(name)
+          return not vim.tbl_contains(
+            { "node_modules", ".git", "__pycache__", ".pytest_cache", "venv", ".venv", "build", "dist", ".tox" },
+            name
+          )
+        end,
+      },
     },
   },
 }
