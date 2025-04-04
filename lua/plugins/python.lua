@@ -40,7 +40,8 @@ return {
     },
   },
   {
-    "lucaSartore/nvim-dap-exception-breakpoints",
+    "a3ng7n/nvim-dap-exception-breakpoints",
+    branch = "fix-missing-filters",
     dependencies = { "mfussenegger/nvim-dap" },
     config = function()
       local set_exception_breakpoints = require("nvim-dap-exception-breakpoints")
