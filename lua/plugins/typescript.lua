@@ -71,4 +71,21 @@ return {
       servers = { vtsls = { settings = { typescript = { preferences = { importModuleSpecifier = "shortest" } } } } },
     },
   },
+  -- fuck the typescript language server, all my homies hate microsoft
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    -- REMOVE THIS once this issue is fixed: https://github.com/yioneko/vtsls/issues/159
+    opts = {
+      routes = {
+        {
+          filter = {
+            event = "notify",
+            find = "Request textDocument/inlayHint failed",
+          },
+          opts = { skip = true },
+        },
+      },
+    },
+  },
 }
